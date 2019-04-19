@@ -12,7 +12,7 @@ var View = (function(){
 
         init : function(g,data){
             game = g;
-            this.updateTime(data.time);
+            // this.updateTime(data.time);
             this.initGrid(data.cell);
         },
 
@@ -78,6 +78,7 @@ var View = (function(){
         },
 
         showLine : function(pos,callback){
+            console.log("显示连线吧！！")
             var _this = this;
             pos.forEach(function(el,index){
                 if (index === 0) return;

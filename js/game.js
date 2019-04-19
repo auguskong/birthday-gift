@@ -9,9 +9,6 @@ var Game = (function(){
         cell : [],
     };
 
-    var timeCooldown = 60;
-
-    var hlepData = [];
 
     var Game = function(){
         
@@ -39,27 +36,9 @@ var Game = (function(){
             location.reload();  
         },
 
-        help: function () {
-            this.judge.apply(this, hlepData);
-        },
-
         update: function () {
 
-            this.updateTime();
-
             window.requestAnimationFrame(this.update.bind(this));  
-        },
-
-        updateTime: function () {
-            timeCooldown--;
-            if (!timeCooldown) {
-                timeCooldown = 60;
-                data.time--;
-                this.view.updateTime(data.time);
-            }
-            if (data.time === 0) {
-                this.over();
-            }
         },
 
         initCell : function(){
@@ -133,6 +112,7 @@ var Game = (function(){
                 1
             ]
         },
+        // 返回两个可能存在的corner坐标
         getCorner : function(before,after){
             var min = Math.min.call(null,before,after);
             var max = Math.max.call(null,before,after);
@@ -149,9 +129,10 @@ var Game = (function(){
                 }),
             ];
         },
+        // connectable是表示直连的元素是否能够抵消 同一行或同一列
         connectable : function(before,after){
             var _this = this;
-            var pos = [];
+            var pos = []; // 记录走过的路径
             var success = false;
             var min = Math.min.call(null,before,after);
             var max = Math.max.call(null,before,after);
@@ -337,7 +318,6 @@ var Game = (function(){
         },
 
         checkDeadlock: function () {
-            log(1);
             var count = config.objectCount;
             var cell = reduceDimension(data.cell);
             var filter = function (i) {
@@ -353,7 +333,7 @@ var Game = (function(){
                     for (var k = 0; k < len; k++){
                         var status = this.isConnectable(el, result[k].index);
                         if (status && status.success) {
-                            hlepData = [el, result[k].index];
+                            helpData = [el, result[k].index];
                             return;
                         }
                     }

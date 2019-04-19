@@ -3,13 +3,13 @@ var config = (function(){
 
     var row = 8;
     var col = 7;
-    var objectCount = 14;
+    var objectCount = 8;
     var repeatCount = row * col / objectCount;
 
     var time = 120;
 
     var imgUrl = "./img/";
-    var imgExtension = ".png";
+    var imgExtension = ".jpg";
     var imgByName = function (name) {
         var src = imgUrl + name + imgExtension;
         return `<img draggable="false" src="${src}"></img>`;
