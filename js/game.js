@@ -296,10 +296,10 @@ var Game = (function(){
 
         winning: function () {
             setTimeout(function () {
-                var str = "已完成，确定再来一局吗？";
+                var str = "已完成，想要查看惊喜吗？";
                 alert(str);
-                location.reload();
-            }, 50);
+                document.location.assign("./surprise.html");
+            }, 500);
         },
         
         over: function () {

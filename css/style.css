@@ -11,10 +11,14 @@
 html, body {
   height: 100%; }
 
+h2 {
+  font-size: 80px;
+  text-align: center;
+}
 body {
   margin: 0 auto;
   max-width: 1200px;
-  background: url("../bg/dw_bg.jpg");
+  background: url("../bg/background.jpeg");
   background-size: cover;
   overflow: hidden;
   color: white;
