@@ -58,6 +58,7 @@ div {
 }
 
 html,body{
+  zoom: 0.8;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -69,14 +70,10 @@ a{
   text-decoration: none;
 }
 
-.overlay-static{
+#myvideo{
   position: relative;
   z-index: 100;
-  margin-bottom: 100px;
-}
-
-#myvideo{
-  visibility: hidden;
+  margin-bottom: 10px;
 }
 
 body{
@@ -86,15 +83,22 @@ body{
 }
 </style>
 <div class="cover super-centered-container">
-  <canvas id="can">Get a browser</canvas>  background-color: white;
-  <div class="overlay-static" >    
-    <div class="inline-blocks">
-      <h2 class="twenty-one block">2</h2>
-      <img class="image block" src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/2f358b77f5e460c7e3cff026ade2162265c32e5dedc2c963eccef889ea4cd58682087731f9084805497951c131057381?pictype=scale&from=30013&version=3.3.3.3&uin=281475052278486&fname=webwxgetmsgimg.jpeg&size=750">
-      <h2 class="twenty-one block"> 1 9</h2>
+  <canvas id="can">Get a browser</canvas>  
+  <div id="myvideo">
+        <iframe src="https://1259069937.vod2.myqcloud.com/vod-player/1259069937/5285890788075736433/tcplayer/console/vod-player.html?autoplay=false&width=1024&height=768" 
+          frameborder="0" scrolling="no" width="100%" height="85%" allowfullscreen >
+        </iframe>
+        <p class="bday">
+            不知不觉咱们俩个已经认识快五年了，在一起也要两年了，感谢你的陪伴，包容和理解。<br>
+            这几天在整理手机里之前咱们两个人一起拍过的照片，回顾我们这两年一起走过的地方，一起见过的风景，曾经发生过的那些开心的和不开心的故事。<br>
+            拉萨的小旅馆你的突然出现，在机场送我回家的恋恋不舍，汉堡的河边，阿姆斯特丹的桥上，布鲁塞尔的广场，古巴的沙滩，这些场景我都还历历在目<br>
+            印象最深刻的就是在古巴的街头我脚扭了，结果让你自己一个人去买雪茄但你去了很久也没有回来的时候，我就坐不住了，担心你出点什么事情，<br>
+            甚至会很自责让你一个人跟着陌生人去买东西，我也是在这种时候才知道你对我很重要，好像从来没和你说过。<br>
+            虽然你的小脾气有时候让我有点受不了，最后的结果就是两个人对着干，但现在再回过头看看，多数时候是被自己的情绪控制了。<br>
+            至于我们的未来，我有想过特别美好的结局，也有担心过仓促的收场，但是当下的我们还能彼此真心相待，有所成长，我觉得就很幸福。为我们的未来努力ing<br>
+            <strong>爱你</strong>
+        </p>
     </div>
-    <h1 class="bday">Happy Birthday <a target="_blank" rel="noopener noreferrer" href="./video.html"> 小雪雪</a></h1>
-  </div>
 </div>
 
 
@@ -196,10 +200,8 @@ function render(){
   requestAnimationFrame(render);
 }
 
-
 render();
-
-// 
+ 
 function isOnHeart(x,y){
 	  x = ((x - center_x) / (min_distance * 1.2)) * 1.8;
 	  y = ((y - center_y) / (min_distance)) * - 1.8;
@@ -208,16 +210,6 @@ function isOnHeart(x,y){
   	var y2 = y * y;
     // Simplest Equation of lurve
     return (Math.pow((x2 + y2 - 1), 3) - (x2 * (y2 * y)) <= 0);
-}
-
-function HideOrShow(cur_div){ 
-  var current=document.getElementById(cur_div);
-  if(current.style.visibility=="hidden") {
-    current.style.visibility ="visible";
-  }
-  else {
-    current.style.visibility ="hidden";
-  }
 }
 
 </script>
