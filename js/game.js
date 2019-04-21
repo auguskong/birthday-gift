@@ -296,7 +296,7 @@ var Game = (function(){
 
         winning: function () {
             setTimeout(function () {
-                var str = "厉害啊，雪雪。再来一局么吗？";
+                var str = "厉害啊，雪雪。再来一局么？";
                 alert(str);
                 document.location.assign("./surprise.html");
             }, 500);
