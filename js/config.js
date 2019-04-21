@@ -3,7 +3,7 @@ var config = (function(){
 
     var row = 6;
     var col = 6;
-    var objectCount = 9;
+    var objectCount = 6;
     var repeatCount = row * col / objectCount;
 
     var time = 120;
