@@ -17,7 +17,7 @@ body{
     max-width: 480px;
     background:url('../bg/dw_bg.jpg');
     background-size: cover;
-    overflow: hidden;
+    overflow: auto;
     color:white;
     font-size: 16px;
 }
@@ -39,7 +39,7 @@ a{
     margin: 0 auto;
     background:rgba(0,0,0,0.5);
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
     & > div{
         width: 100%;
     }
